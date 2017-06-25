@@ -14,7 +14,7 @@ set expandtab
 set autoindent
 set smartindent
 syntax on
-filetype on
+filetype off
 
 "设置自动换行
 set wrap
@@ -55,12 +55,14 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'valloric/youcompleteme'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'raimondi/delimitmate'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin on
 filetype indent on
@@ -70,7 +72,6 @@ syntax enable
 set background=dark
 let g:molokai_original = 1
 let g:rehash256 = 1
-
 
 
 map <leader>n :NERDTreeToggle<CR>
@@ -87,19 +88,18 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
-
 let g:ycm_collect_identifiers_from_tags_files = 1 
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_seed_identifiers_with_syntax = 1 
 let g:ycm_complete_in_comments = 1 
 let g:ycm_complete_in_strings = 1 
-
-
+let g:ycm_autoclose_preview_windows_after_completion = 1
 "let g:UltiSnipsListSnippets        = "<c-k>" 
 
 
 nnoremap <space> za
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=99
 
+let g:indentLine_setColors = 0
 autocmd FileType html UltiSnipsAddFiletypes htmldjango
